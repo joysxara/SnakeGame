@@ -47,4 +47,5 @@ class App:
         pass
 
     def on_render(self):
+        self._display_surf.fill((0,0,0))
         
