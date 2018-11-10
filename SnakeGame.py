@@ -1,6 +1,6 @@
 
-from pygame.locals import *
 import pygame
+from pygame.locals import *
 
 # Create Player class
 class Player:
@@ -32,5 +32,19 @@ class App:
         self._running = True
 
     def on_init(self):
-        pygame.init
+        pygame.init()
+        self._display_surf = pygame.display.set_mode((self.windowWidth, self.windowHeight), pygame.HWSURFACE)
+
+        pygame.display.set_caption( ' SNAKE GAME!!!!!!')
+        self._running = True
+        self._image_surf = pygame.image.load("Assets/grass.jpg").convert()
+
+    def on_event(self, event):
+        if event.type == QUIT:
+            self._running = False
+
+    def on_loop(self):
+        pass
+
+    def on_render(self):
         
